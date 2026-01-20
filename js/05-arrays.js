@@ -11,13 +11,15 @@ const datosCombinados = [true, "Juan", 35, false, "Pedro"];
 const años = [12, 390, 2, 167, 40];
 
 console.log(años[0]);
-console.log(años[4]);
+console.log(años[2]);
 
 //nos devuelve la longitud del array
 console.log(años.length);
 
 //nos devuelve el numero mayor del array
 console.log(Math.max(...años));
+console.log(...años);
+
 
 //Metodos de arrays MUTABLES(modifican al array original)
 
@@ -59,10 +61,38 @@ console.log(triples);
 //corta al array
 //incluyendo al primer parametro
 //excluyendo al segundo parametro
-const a = [10, 20, 30, 40, 50];
+const array = [10, 20, 30, 40, 50, 60, 70, 3, 80, 5];
 
-const b = a.slice(0,2)
+const b = array.slice(0,2)
 console.log(b);
+
+//metodo concat() concatenar
+const c = [1, 2, 3].concat([4, 5]);
+console.log(c);
+
+//metodo find() nos devuelve el primer elemento que cumpla con la condicion
+const encontrado = array.find(elemento => elemento > 3 );
+console.log(encontrado);
+
+//metodo filter() nos devueve a todos los elementos que cumplen la condicion
+const filtrados = array.filter(elemento => elemento > 40)
+console.log(filtrados);
+
+const meses = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+document.writeln(`<ul class="list-group">`);
+for (let i = 0; i < meses.length; i++) {
+    document.writeln(`<li class="list-group-item">${meses[i]}`)
+}
+document.writeln(`</ul>`);
+
+
+
+
+
+
+
+
 
 
 
