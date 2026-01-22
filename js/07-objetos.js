@@ -27,5 +27,18 @@ const funko = {
     marca: "Special Edition",
     estado: true,
     //metodos
-    
+    mostrarDatos: function () {
+        console.log(this);
+        document.writeln(`<p><b>Funko: ${this.nombre}</b></p>`);
+        document.writeln(`<ul><li>Codigo: ${this.codigo}</li>
+            <li>Precio: ${this.precio}</li>
+            <li>Marca: ${this.marca}</li>
+            <li>Estado: ${this.estado}</li></ul>`)
+    }
 }
+
+console.log(funko.codigo);
+console.log(funko.nombre);
+
+
+
