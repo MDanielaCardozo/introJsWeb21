@@ -28,17 +28,34 @@ const funko = {
     estado: true,
     //metodos
     mostrarDatos: function () {
-        console.log(this);
+        //console.log(this);
         document.writeln(`<p><b>Funko: ${this.nombre}</b></p>`);
         document.writeln(`<ul><li>Codigo: ${this.codigo}</li>
             <li>Precio: ${this.precio}</li>
             <li>Marca: ${this.marca}</li>
             <li>Estado: ${this.estado}</li></ul>`)
+    },
+
+    actualizarPrecio: function (nuevoPrecio) {
+        console.log(this);
+        console.log(this.precio);
+        this.precio = nuevoPrecio;
+        document.writeln(`<p>Precio actualizado, el precio nuevo es: $${this.precio}`);
+    },
+
+    mostrarTitulo: () => {
+        document.writeln(`<h1>Funko:</h1>`)
     }
 }
 
 console.log(funko.codigo);
 console.log(funko.nombre);
 
+funko.mostrarTitulo()
+document.writeln(funko.mostrarDatos())
+funko.actualizarPrecio(40)
+
+funko.tamanio = "Regular";
+document.writeln(`<p>Tamaño: ${funko.tamanio}`)
 
 
