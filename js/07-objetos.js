@@ -50,12 +50,24 @@ const funko = {
 
 console.log(funko.codigo);
 console.log(funko.nombre);
+document.writeln(funko)
 
 funko.mostrarTitulo()
 document.writeln(funko.mostrarDatos())
 funko.actualizarPrecio(40)
 
+//agregamos un nueva propiedad al objeto funko
 funko.tamanio = "Regular";
-document.writeln(`<p>Tamaño: ${funko.tamanio}`)
+document.writeln(`<p>Tamaño: ${funko.tamanio}</p>`)
+
+funko.tienda = "no definido por el momento";
+document.writeln(`<p>Tienda: ${funko.tienda} </p>`)
+
+//borramos una propiedad del objeto
+delete funko.tienda;
+document.writeln(`<p>Tienda: ${funko.tienda} </p>`)
+
+
+
 
 
