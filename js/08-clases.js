@@ -144,3 +144,57 @@ console.log(charizard);
 
 pikachu.mostrarDatos()
 charizard.mostrarDatos()
+
+//Herencia
+class PokemonLegendario extends Pokemon {
+    #habilidadOculta;
+    constructor(nombreParam, tipo, habilidadesParam, evolucionesParam, numPokeDex, habilidadOculta){
+        /* this._nombre = nombreParam;
+        this.tipo = tipo;
+        this.habilidades = habilidadesParam;
+        this.evoluciones = evolucionesParam;
+        this.numPokeDex = numPokeDex;
+        this.nivel = 100;  */
+        super(nombreParam, tipo, habilidadesParam, evolucionesParam, numPokeDex);
+        this.#habilidadOculta = habilidadOculta;
+    }
+    get habilidadOculta() {
+        return this.#habilidadOculta;
+    }
+    set habilidadOculta(nuevaHabilidadOculta) {
+        if (nuevaHabilidadOculta.length > 0) {
+            this.#habilidadOculta = nuevaHabilidadOculta;
+        }
+    }
+
+    mostrarDatosPokemonLegendario(){
+
+    }
+
+    mostrarDatos(){
+        document.writeln(`<ul>
+            <li>Nombre: ${(this._nombre)}</li>
+            <li>Num de PokeDex: ${(this.numPokeDex)}</li>
+            <li>Tipo: ${(this.tipo)}</li>
+            <li>Habilidades: ${(this.habilidades)}</li>
+            <li>Evoluciones: ${(this.evoluciones)}</li>
+            <li>Nivel de vida: ${(this.nivel)}</li>
+            <li>Habilidad Oculta: ${(this.#habilidadOculta)}</li>
+            </ul></br>`)
+    }
+}
+
+const articuno = new PokemonLegendario(
+    "Articuno",
+    "Hielo ❄️",
+    ["presion", "canto helado"],
+    "Sin evolucion",
+    144,
+    "manto niveo"
+);
+
+console.log(articuno);
+
+articuno.mostrarDatos()
+
+
