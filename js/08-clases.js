@@ -49,7 +49,7 @@ class Usuario {
             <li>Nombre y apellido: ${(this.nombre)} ${(this.apellido)}</li>
             <li>Email: ${(this.#email)}</li>
             <li>Edad: ${(this.edad)}</li>
-            <li>DNI: ${(this.dni)}</li></br>`)
+            <li>DNI: ${(this.dni)}</li></ul></br>`)
     }
 }
 
@@ -73,3 +73,74 @@ const agustin = new Usuario(
 
 diego.mostrarDatos();
 agustin.mostrarDatos();
+
+
+class Pokemon {
+    #numPokeDex;
+    #tipo;
+    constructor(nombreParam, tipo, habilidadesParam, evolucionesParam, numPokeDex) {
+        this._nombre = nombreParam;
+        this.#tipo = tipo;
+        this.habilidades = habilidadesParam;
+        this.evoluciones = evolucionesParam;
+        this.#numPokeDex = numPokeDex;
+        this.nivel = 100; //propiedad por defecto
+    }
+
+    //getter y setter para obtener y modificar propiedad privadas(prop conmutadas)
+    get tipo(){
+        return this.#tipo;
+    }
+    get numPokeDex(){
+        return this.#numPokeDex;
+    }
+
+    set tipo(nuevoTipo){
+        if (nuevoTipo.length > 0 ) {
+            this.#tipo = nuevoTipo;
+        }
+    }
+
+    set numPokeDex(nuevoNumPokeDex){
+        if (nuevoNumPokeDex > 0 && nuevoNumPokeDex <= 151) {
+            this.#numPokeDex = nuevoNumPokeDex;
+        }
+    }
+
+    mostrarNombre() {
+        return this._nombre;
+    }
+
+    mostrarDatos() {
+        document.writeln(`<ul>
+            <li>Nombre: ${(this._nombre)}</li>
+            <li>Num de PokeDex: ${(this.#numPokeDex)}</li>
+            <li>Tipo: ${(this.#tipo)}</li>
+            <li>Habilidades: ${(this.habilidades)}</li>
+            <li>Evoluciones: ${(this.evoluciones)}</li>
+            <li>Nivel de vida: ${(this.nivel)}</li>
+            </ul></br>`)
+    }
+}
+
+const pikachu = new Pokemon(
+    "Pikachu",
+    "Electrico",
+    ["Ataque rápido", "Impactrueno", "Rayo"],
+    ["Pichu", "Pikachu", "Raichu"],
+    25
+)
+
+const charizard = new Pokemon(
+    "Charizard",
+    "Fuego",
+    ["Ataque rapido", "Impactrueno", "Rayo"],
+    ["Charmander", "Charmeleon", "Charizard"],
+    6
+)
+
+console.log(pikachu);
+console.log(charizard);
+
+pikachu.mostrarDatos()
+charizard.mostrarDatos()
